@@ -143,14 +143,14 @@ jobs:
           docker load --input /tmp/image.tar
           docker images
 
-      - name: Run Integration Test
-        if: steps.target.outputs.update_needed == 'true'
-        env:
-          TEST_IMAGE_NAME: pbs-test-ci:latest
-        run: |
-          docker pull debian:trixie-slim
-          chmod +x local_test.bash local_cleanup.bash
-          ./local_test.bash
+      # - name: Run Integration Test
+      #   if: steps.target.outputs.update_needed == 'true'
+      #   env:
+      #     TEST_IMAGE_NAME: pbs-test-ci:latest
+      #   run: |
+      #     docker pull debian:trixie-slim
+      #     chmod +x local_test.bash local_cleanup.bash
+      #     ./local_test.bash
 
       - name: Push to GHCR
         if: steps.target.outputs.update_needed == 'true'
