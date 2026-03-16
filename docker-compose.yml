@@ -4,7 +4,7 @@
 # =================================================================
 services:
   pbs:
-    image: ghcr.io/ramonvanraaij/proxmox-backup-server:latest
+    image: ghcr.io/fragpic/proxmox-backup-server:latest
     container_name: proxmox-backup-server
     restart: unless-stopped
     ports:
